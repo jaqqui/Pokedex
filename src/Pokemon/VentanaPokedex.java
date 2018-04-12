@@ -26,7 +26,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
     BufferedImage plantilla = null;
     private int contador = 0;
-    private int ancho = 200, alto = 200;
+    private int ancho = 100, alto =100;
     int total_pokemons = 0;
     // conectamos a la base de datos
 
@@ -43,8 +43,8 @@ public class VentanaPokedex extends javax.swing.JFrame {
      * Creates new form VentanaPokedex
      */
     private ImageIcon devuelveElPokemonQueEstaEnLaPosicion (int posicion){
-        int columna = posicion / 31;
-        int fila = posicion % 31;
+        int columna = posicion / 30;
+        int fila = posicion % 30;
         return ( new ImageIcon(plantilla.getSubimage(fila*96+1, columna*96+1, 96, 96)
                 .getScaledInstance(ancho, alto, Image.SCALE_DEFAULT))); 
     }
@@ -75,7 +75,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
             //cargo el resultado de la query en mi hashmap
             while (resultadoConsulta.next()){
                 Pokemon p = new Pokemon();
-                p.nombre = resultadoConsulta.getString(2);
+                p.nombre = resultadoConsulta.getString("name");
                 p.generation_id = resultadoConsulta.getInt(5);
                 p.evolution_chain_id = resultadoConsulta.getInt(6);
                 p.species = resultadoConsulta.getString(12);
