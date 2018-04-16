@@ -68,7 +68,8 @@ public class VentanaPokedex extends javax.swing.JFrame {
     public VentanaPokedex() {
         initComponents();
         try{
-            plantilla = ImageIO.read(getClass().getResource("black-white.png"));
+            plantilla = ImageIO.read(getClass().getResource("PokemonShiny.jpg"));
+            if(jLabel14.)
         }
         catch (IOException e){}
    
@@ -122,6 +123,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -170,6 +172,13 @@ public class VentanaPokedex extends javax.swing.JFrame {
         jLabel13.setText(" Altura");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 40, 20));
 
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel14MousePressed(evt);
+            }
+        });
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 60, 10));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokemon/pokedex1.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
 
@@ -192,6 +201,11 @@ public class VentanaPokedex extends javax.swing.JFrame {
         jLabel2.setIcon(devuelveElPokemonQueEstaEnLaPosicion(contador));  
         escribeDatos();
     }//GEN-LAST:event_jLabel3MousePressed
+
+    private void jLabel14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MousePressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jLabel14MousePressed
 
     /**
      * @param args the command line arguments
@@ -234,6 +248,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
